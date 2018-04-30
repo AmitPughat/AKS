@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  aks-api:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+      - "82:82"
+
+  aks:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+      - "92:92"
+

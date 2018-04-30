@@ -1,0 +1,27 @@
+version: '3'
+
+services:
+  aks:
+    image: aks
+    #network_mode: bridge
+    networks:
+      - aks-network
+    build:
+      context: .
+      dockerfile: WebApplication1/Dockerfile
+    ports:
+      - "92:92"
+  aks-api:
+    image: aks-api
+    #network_mode: bridge
+    networks:
+      - aks-network
+
+    build:
+      context: .
+      dockerfile: AKS-API/Dockerfile
+    ports:
+      - "82:82"      
+networks:
+  aks-network:
+    external: true
