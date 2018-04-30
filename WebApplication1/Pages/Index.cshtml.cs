@@ -20,7 +20,7 @@ namespace WebApplication1.Pages
         public void OnGet()
         {
             HttpClient client = new HttpClient();
-            client.BaseAddress = new Uri("http://172.20.0.4:82/");
+            client.BaseAddress = new Uri("http://172.20.0.3:82/");
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
             HttpResponseMessage message = client.GetAsync("api/heroes").Result;
             if (message.IsSuccessStatusCode)
